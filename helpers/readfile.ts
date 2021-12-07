@@ -1,13 +1,16 @@
 import readlines from "n-readlines";
 
-const readFileByLine = (filename, lineFn) => {
-  const input = new readlines("./input_1.txt");
+function readFileByLine<X>(
+  filename: string,
+  lineFn: (line: X) => void,
+  transformFn: (buf: Buffer) => X
+) {
+  const input = new readlines(filename);
 
   let buffer: Buffer | false;
-
   while ((buffer = input.next())) {
-    lineFn(buffer.toString());
+    lineFn(transformFn(buffer));
   }
-};
+}
 
 export default readFileByLine;
