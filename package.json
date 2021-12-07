@@ -1,0 +1,21 @@
+{
+  "name": "advent_2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Asivido",
+  "license": "ISC",
+  "dependencies": {
+    "@types/lodash": "^4.14.177",
+    "lodash": "^4.17.21",
+    "n-readlines": "^1.0.1",
+    "ts-node": "^10.4.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/n-readlines": "^1.0.2"
+  }
+}
