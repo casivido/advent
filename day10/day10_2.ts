@@ -1,4 +1,4 @@
-import { sum } from "lodash";
+import { sum, toInteger } from "lodash";
 import readFileByLine from "../helpers/readfile";
 
 const valueMap: Record<string, number> = {
@@ -52,4 +52,4 @@ readFileByLine("day10/input10_1.txt", (line) => {
 });
 
 const sortedValues = values.sort((a, b) => b - a);
-console.log(sortedValues[sortedValues.length / 2 - 0.5]);
+console.log(sortedValues[toInteger(sortedValues.length / 2)]);
