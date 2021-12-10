@@ -5,6 +5,7 @@ function getInputStream(filename: string) {
   return new readlines(filename);
 }
 
+// applies the function to all lines in order
 function readFileByLine(filename: string, lineFn: (line: string) => void) {
   const input = getInputStream(filename);
 
@@ -14,6 +15,7 @@ function readFileByLine(filename: string, lineFn: (line: string) => void) {
   }
 }
 
+// return a function to get the next line
 export function fileReader(filename: string) {
   const input = getInputStream(filename);
 
