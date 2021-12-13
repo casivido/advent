@@ -22,7 +22,6 @@ const closeCharMap: Record<string, string> = {
   "}": "{",
   ">": "<",
 };
-const closeChars = Object.keys(closeCharMap);
 
 const brokenChars: string[] = [];
 readFileByLine("day10/input10_1.txt", (line) => {
