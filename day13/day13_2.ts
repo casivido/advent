@@ -78,7 +78,7 @@ const display: string[] = [];
 range(0, maxY + 1).forEach((y) => {
   display[y] = "";
   range(0, maxX + 1).forEach((x) => {
-    display[y] += points?.[x]?.[y] ? "#" : " ";
+    display[y] += points?.[x]?.[y] ? "|" : " ";
   });
 });
 
