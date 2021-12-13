@@ -74,11 +74,11 @@ forEach(points, (yRecord, xStr) => {
   sum += Object.keys(yRecord).length;
 });
 
-const display: number[][] = [];
+const display: string[][] = [];
 range(0, maxY + 1).forEach((y) => {
   display[y] = [];
   range(0, maxX + 1).forEach((x) => {
-    display[y].push(points?.[x]?.[y] ? 1 : 0);
+    display[y].push(points?.[x]?.[y] ? "#" : " ");
   });
 });
 
