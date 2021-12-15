@@ -1,4 +1,4 @@
-import { forEach, invert, invertBy, reverse } from "lodash";
+import { forEach } from "lodash";
 import readFileByLine from "../helpers/readfile";
 
 interface Instruction {

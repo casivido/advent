@@ -1,4 +1,3 @@
-import { sum } from "lodash";
 import { fileReader } from "../helpers/readfile";
 
 const alignmentsRaw = fileReader("day7/input7_1.txt")();

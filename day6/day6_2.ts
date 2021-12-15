@@ -1,4 +1,4 @@
-import { fill, sum } from "lodash";
+import { sum } from "lodash";
 import { fileReader } from "../helpers/readfile";
 
 const startingFishRaw = fileReader("day6/input6_1.txt")();

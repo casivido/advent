@@ -1,4 +1,4 @@
-import { isNumber, range } from "lodash";
+import { isNumber } from "lodash";
 import readFileByLine from "../helpers/readfile";
 
 const map: number[][] = [];

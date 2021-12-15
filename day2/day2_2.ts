@@ -21,14 +21,10 @@ const move = (direction: string, value: number) => {
   }
 };
 
-readFileByLine(
-  "day2/input1.txt",
-  (line: string) => {
-    const [direction, value] = line.split(" ");
-    move(direction, parseInt(value));
-  },
-  (buf) => buf.toString()
-);
+readFileByLine("day2/input1.txt", (line: string) => {
+  const [direction, value] = line.split(" ");
+  move(direction, parseInt(value));
+});
 
 console.log("depth: ", depth);
 console.log("position: ", position);

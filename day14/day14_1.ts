@@ -1,4 +1,4 @@
-import { cloneDeep, forEach, map } from "lodash";
+import { forEach } from "lodash";
 import { fileReader } from "../helpers/readfile";
 
 const getNextLine = fileReader("day14/input14_1.txt");

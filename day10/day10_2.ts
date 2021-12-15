@@ -1,4 +1,4 @@
-import { sum, toInteger } from "lodash";
+import { toInteger } from "lodash";
 import readFileByLine from "../helpers/readfile";
 
 const valueMap: Record<string, number> = {

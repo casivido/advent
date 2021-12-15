@@ -1,4 +1,4 @@
-import _, { forEach, intersection, range, sum } from "lodash";
+import _, { forEach, intersection, range } from "lodash";
 import readFileByLine from "../helpers/readfile";
 
 const map: number[][] = [];
