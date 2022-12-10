@@ -9,14 +9,10 @@ def getTypePoints(type):
 
 total_sum = 0
 for sack in rucksacks:
-    print('sack:')
-    print(sack)
     sack_half_length = int(len(sack)/2)
     first_half = sack[:sack_half_length]
-    print('halves:')
-    print(first_half)
     second_half = sack[sack_half_length:]
-    print(second_half)
+
 
     types_found = {}
     for type in first_half:
@@ -27,6 +23,6 @@ for sack in rucksacks:
         if type in types_found:
             duplicate_type = type
             break
-    print(duplicate_type)
+
     total_sum += getTypePoints(duplicate_type)
 print(total_sum)
