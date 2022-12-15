@@ -54,35 +54,35 @@ for first_index, first_line in enumerate(lines):
         else:
             results[first_index].append(compare_elements(lines[first_index], lines[second_index]))
 
-# followers = []
-# for index, line_results in enumerate(results):
-#     followers.append({
-#         'line_index': index,
-#         'follower_indices': [n for n in list(range(len(line_results))) if line_results[n] == VALID]
-#     })
+followers = []
+for index, line_results in enumerate(results):
+    followers.append([n for n in list(range(len(line_results))) if line_results[n] == VALID])
 
-# followers.sort(key=lambda x: len(x['follower_indices']))
+last_index = 6 #test
+last_index = 151 #prod
+excluded_indices = [last_index]
+def getPrecedingIndex(follower_index):
+    for potential_leader_index, followers_list in enumerate(followers):
+        found = False
+        too_many = False
+        for prospect_follower_index in followers_list:
+            if prospect_follower_index == follower_index:
+                found = True
+            elif prospect_follower_index not in excluded_indices:
+                too_many = True
+        if found and not too_many:
+            excluded_indices.append(potential_leader_index)
+            return getPrecedingIndex(potential_leader_index)
 
-def put_in_order(cur_list, remaining_indices):
-    if len(remaining_indices) == 0:
-        print(cur_list)
-        return VALID
-    if(len(cur_list) == 2):
-        print('another round')
-    for counter in range(len(remaining_indices)):
-        remaining_index = remaining_indices[counter]
-        if results[cur_list[-1]][remaining_index] == VALID:
-            remaining_indices.pop(counter)
-            if put_in_order(cur_list+[remaining_index], remaining_indices) == VALID:
-                return VALID
-            remaining_indices.insert(counter, remaining_index)
-    return INVALID
 
-all_indices = range(len(lines))
-for index, line in enumerate(lines):
-    timer = time.time()
-    print(index)
-    other_indices = [n for n in all_indices if n != index]
-    if index == 12:
-        print('here we go')
-    print(index, put_in_order([index], other_indices), timer - time.time())
+getPrecedingIndex(last_index)
+excluded_indices.reverse()
+print(excluded_indices)
+print('found: ', len(excluded_indices))
+print('total: ', len(lines))
+
+for index in excluded_indices:
+    print(lines[index])
+first = excluded_indices.index(0)+1
+second = excluded_indices.index(1)+1
+print('answer: ', first*second)
