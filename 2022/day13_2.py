@@ -59,7 +59,7 @@ for index, line_results in enumerate(results):
     followers.append([n for n in list(range(len(line_results))) if line_results[n] == VALID])
 
 last_index = 6 #test
-last_index = 151 #prod
+last_index = 151 #prod TODO: find this dynamically by getting the index with no followers
 excluded_indices = [last_index]
 def getPrecedingIndex(follower_index):
     for potential_leader_index, followers_list in enumerate(followers):
