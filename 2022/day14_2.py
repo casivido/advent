@@ -113,7 +113,6 @@ def get_final_location(starting_location):
             return get_final_location(potential_location)
     return starting_location
 
-
 sand_counter = 0
 while True:
     end_location = get_final_location(starting_sand_location)
